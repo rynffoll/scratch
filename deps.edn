@@ -1,6 +1,9 @@
 {:paths ["resources" "src"]
 
- :deps {org.clojure/clojure {:mvn/version "1.10.1"}}
+ :deps {org.clojure/clojure {:mvn/version "1.10.1"}
+        expound {:mvn/version "0.7.2"}
+        metosin/spec-tools {:mvn/version "0.10.0"}
+        cheshire {:mvn/version "5.9.0"}}
 
  :aliases
  {:test {:extra-paths ["test"]
@@ -13,4 +16,7 @@
    :main-opts ["-m" "cognitect.test-runner"
                "-d" "test"]}
 
-  :dev {:extra-paths ["dev"]}}}
+  :dev {:extra-paths ["dev"]
+        :extra-deps {org.clojure/tools.deps.alpha
+                     {:git/url "https://github.com/clojure/tools.deps.alpha.git"
+                      :sha "148cab8f154711f8495bd632ebdc53a14dff7f09"}}}}}
